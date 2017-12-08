@@ -4,6 +4,8 @@
 EAPI=6
 
 USE_RUBY="ruby21 ruby22 ruby23 ruby24"
+RUBY_FAKEGEM_TASK_DOC=""
+
 inherit ruby-fakegem
 
 DESCRIPTION="An asynchronous DNS resolver and server."

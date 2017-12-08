@@ -4,6 +4,7 @@
 EAPI=6
 
 USE_RUBY="ruby22 ruby23 ruby24"
+RUBY_FAKEGEM_TASK_DOC=""
 
 inherit ruby-fakegem
 
