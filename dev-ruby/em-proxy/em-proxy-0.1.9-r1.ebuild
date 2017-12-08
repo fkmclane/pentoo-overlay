@@ -16,4 +16,6 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
+DEPEND="!dev-ruby/em-proxy:0"
+
 ruby_add_rdepend "dev-ruby/eventmachine"
