@@ -16,6 +16,8 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
+RDEPEND="${RDEPEND} !dev-ruby/em-http-request:0"
+
 ruby_add_rdepend "
 	>=dev-ruby/addressable-2.3.4
 	dev-ruby/cookiejar

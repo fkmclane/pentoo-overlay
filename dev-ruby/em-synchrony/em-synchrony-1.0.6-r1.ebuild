@@ -16,4 +16,6 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~arm ~x86 "
 IUSE=""
 
+RDEPEND="${RDEPEND} !dev-ruby/em-synchrony:0"
+
 ruby_add_rdepend ">=dev-ruby/eventmachine-1.0.0"
