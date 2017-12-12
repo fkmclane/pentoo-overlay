@@ -17,6 +17,6 @@ SLOT="$(get_version_component_range 1-2)"
 KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
-DEPEND="!=dev-ruby/em-websocket-${PV}:0"
+RDEPEND="${RDEPEND} !dev-ruby/em-websocket:0"
 
 ruby_add_rdepend "dev-ruby/eventmachine dev-ruby/http_parser_rb"
