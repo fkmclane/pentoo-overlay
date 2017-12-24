@@ -3,7 +3,7 @@
 
 EAPI=6
 
-USE_RUBY="ruby23"
+USE_RUBY="ruby21 ruby22 ruby23 ruby24"
 RUBY_FAKEGEM_TASK_DOC=""
 
 inherit ruby-fakegem
@@ -13,7 +13,7 @@ HOMEPAGE="https://github.com/datamapper/dm-serializer"
 
 LICENSE="MIT"
 SLOT=0
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="~amd64 ~x86 ~arm"
 IUSE=""
 
 ruby_add_rdepend "dev-ruby/dm-core dev-ruby/fastercsv dev-ruby/json:0 dev-ruby/multi_json"
