@@ -1,16 +1,17 @@
-# Copyright 1999-2017 Gentoo Foundation
+# Copyright 1999-2018 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=5
+EAPI=6
 
-PYTHON_COMPAT=( python2_7 python3_{4,5} )
+PYTHON_COMPAT=( python2_7 python3_{4,5,6} )
 
 inherit distutils-r1 vcs-snapshot
 
 DESCRIPTION="YAML parser/emitter that supports roundtrip comment preservation"
 HOMEPAGE="https://pypi.python.org/pypi/ruamel.yaml"
-SRC_URI="https://bitbucket.org/ruamel/yaml/get/${PV}.tar.bz2 -> ${P}.tar.bz2"
+MY_PN="ruamel.yaml"
+MY_P="${MY_PN}-${PV}"
+SRC_URI="mirror://pypi/${MY_PN:0:1}/${MY_PN}/${MY_P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
@@ -30,6 +31,8 @@ DEPEND="${RDEPEND}
 	libyaml? ( $(python_gen_cond_dep 'dev-python/cython[${PYTHON_USEDEP}]' python2_7 'python3*') )
 	test? ( dev-python/pytest[${PYTHON_USEDEP}] )"
 
+S="${WORKDIR}/${MY_P}"
+
 python_configure_all() {
 	if ! use libyaml ; then
 		sed -i -e 's|\(ext_modules\)|no_\1|' __init__.py || die
@@ -38,6 +41,7 @@ python_configure_all() {
 
 python_install() {
 	distutils-r1_python_install --single-version-externally-managed
+	find "${ED}" -name '*.pth' -delete || die
 }
 
 python_test() {
