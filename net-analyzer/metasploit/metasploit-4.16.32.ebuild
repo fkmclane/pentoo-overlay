@@ -54,6 +54,7 @@ RUBY_COMMON_DEPEND="virtual/ruby-ssl
 	dev-ruby/metasploit-payloads:1.3.25
 	>=dev-ruby/metasploit_data_models-2.0.15:*
 	dev-ruby/metasploit_payloads-mettle:0.3.3
+	dev-ruby/mqtt
 	dev-ruby/msgpack
 	dev-ruby/nessus_rest
 	dev-ruby/net-ssh:*
